@@ -1,0 +1,48 @@
+import React from 'react';
+
+const InstructorDashboard = () => {
+  // Some sample data for demonstration purposes
+  const courses = [
+    { id: 1, title: 'Course 1', students: 25 },
+    { id: 2, title: 'Course 2', students: 30 },
+    // Add more course data as needed
+  ];
+
+  const upcomingEvents = [
+    { id: 1, title: 'Workshop', date: 'November 20, 2023' },
+    { id: 2, title: 'Seminar', date: 'December 5, 2023' },
+    // Add more event data as needed
+  ];
+
+  return (
+    <div className="instructor-dashboard">
+      <h2>Welcome, Instructor!</h2>
+      
+      {/* Display courses */}
+      <div className="courses">
+        <h3>Your Courses</h3>
+        <ul>
+          {courses.map(course => (
+            <li key={course.id}>
+              {course.title} - Students: {course.students}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Display upcoming events */}
+      <div className="upcoming-events">
+        <h3>Upcoming Events</h3>
+        <ul>
+          {upcomingEvents.map(event => (
+            <li key={event.id}>
+              {event.title} - Date: {event.date}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default InstructorDashboard;
